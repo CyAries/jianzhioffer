@@ -1,4 +1,4 @@
-package day1;
+package jianzhioffer.day1;
 
 import org.junit.Test;
 
