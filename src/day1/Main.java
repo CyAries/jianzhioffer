@@ -1,8 +1,7 @@
-package design.copy1996.day1;
+package day1;
 
 import org.junit.Test;
 
-import java.util.Iterator;
 import java.util.Stack;
 
 public class Main {
