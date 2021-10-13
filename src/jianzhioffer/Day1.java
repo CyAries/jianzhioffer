@@ -1,10 +1,8 @@
-package jianzhioffer.day1;
-
-import org.junit.Test;
+package jianzhioffer;
 
 import java.util.Stack;
 
-public class Main {
+public class Day1 {
     /**
      * 1.用两个栈实现一个队列。队列的声明如下，请实现它的两个函数 appendTail 和 deleteHead ，
      * 分别完成在队列尾部插入整数和在队列头部删除整数的功能。
@@ -100,47 +98,5 @@ public class Main {
             this.data = data;
             next = null;
         }
-    }
-/**
- * Your MinStack object will be instantiated and called as such:
- * MinStack obj = new MinStack();
- * obj.push(x);
- * obj.pop();
- * int param_3 = obj.top();
- * int param_4 = obj.min();
- * ["MinStack","push","push","push","top","pop","min","pop","min","pop","push","top","min","push","top","min","pop","min"]
- * [[],[2147483646],[2147483646],[2147483647],[],[],[],[],[],[],[2147483647],[],[],[-2147483648],[],[],[],[]]
- * [null,null,null,null,2147483647,null,2147483646,null,2147483646,null,null,2147483647,2147483646,null,-2147483648,-2147483648,null,2147483646]
- * [null,null,null,null,2147483647,null,2147483646,null,2147483646,null,null,2147483647,2147483647,null,-2147483648,-2147483648,null,2147483647]
- */
-    @Test
-    public void test(){
-        MinStack minStack = new MinStack();
-        minStack.push(2147483646);
-        minStack.push(2147483646);
-        minStack.push(2147483647);
-        minStack.top();
-        minStack.pop();
-        minStack.min();
-        minStack.pop();
-        minStack.min();
-        minStack.pop();
-        minStack.push(2147483647);
-        minStack.top();
-        minStack.min();
-        minStack.push(-2147483648);
-        minStack.top();
-        minStack.min();
-        minStack.pop();
-        minStack.min();
-
-        minStack.push(0);
-        System.out.println(minStack.min());;
-        minStack.pop();
-        System.out.println(minStack.min());;
-        minStack.pop();
-        System.out.println(minStack.min());;
-        minStack.pop();
-        System.out.println(minStack.min());
     }
 }

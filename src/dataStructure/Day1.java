@@ -1,8 +1,8 @@
-package dataStructure.day1;
+package dataStructure;
 
-import java.util.*;
+import java.util.Arrays;
 
-public class Main {
+public class Day1 {
     /**
      * 给定一个整数数组，判断是否存在重复元素。
      *
@@ -41,10 +41,5 @@ public class Main {
             return max;
         }
     }
-    public static void main(String[] args) {
-        Solution2 solution = new Main().new Solution2();
-        int a[] = {-2,-1};
-        System.out.println(solution.maxSubArray(a));;
 
-    }
 }
