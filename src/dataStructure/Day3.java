@@ -25,31 +25,13 @@ public class Day3 {
             return Arrays.copyOf(nums1, len);
         }
     }
-    class Solution2 {
-        public int maxProfit(int[] prices) {
-            for (int i = 0; i < prices.length-1; i++) {
-                prices[i] = prices[i + 1] - prices[i];
-            }
-            return getMax(prices, prices.length-1);
-        }
-        public int getMax(int []a, int n){
-            int max = 0, sum = 0;
-            for (int i = 0; i < n; i++) {
-                sum+=a[i];
-                if (sum < 0) {
-                    sum = 0;
-                    continue;
-                }
-                if (max < sum) {
-                    max = sum;
-                }
-            }
-            return max;
-        }
-    }
+
+    /**
+     * 买卖股票的最好时间
+     */
     class Solution {
         public int maxProfit(int[] prices) {
-            int min = Integer.MAX_VALUE;// 记录遍历到的最低点
+            int min = Integer.MAX_VALUE; // 记录遍历到的最低点
             int maxProfit = 0; // 记录最大利润
             for (int i = 0; i < prices.length; i++) {
                 if (min>prices[i]){
@@ -60,8 +42,5 @@ public class Day3 {
             return maxProfit;
         }
     }
-    public static void main(String[] args) {
-        int[] a = {7,1,5,3,6,4};
-        System.out.println(new Day3().new Solution2().maxProfit(a));
-    }
+
 }

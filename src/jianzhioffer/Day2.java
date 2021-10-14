@@ -121,5 +121,5 @@ public class Day2 {
             this.random = null;
         }
     }
-    
+
 }
