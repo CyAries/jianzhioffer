@@ -32,7 +32,7 @@ public class Day2 {
         }
     }
     class Solution3 {
-        public void reversePrint(ListNode head) {
+        public ListNode reverseList(ListNode head) {
             ListNode node = new ListNode(-1);
             node.next = null;
             ListNode p = head;
@@ -42,11 +42,7 @@ public class Day2 {
                 node.next = p;
                 p = head;
             }
-            p = node.next;
-            while(p!=null){
-                System.out.println(p.val);
-                p = p.next;
-            }
+            return node.next;
         }
     }
     class ListNode{
@@ -125,4 +121,5 @@ public class Day2 {
             this.random = null;
         }
     }
+    
 }
