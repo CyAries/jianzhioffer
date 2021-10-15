@@ -56,7 +56,7 @@ public class Day3 {
     /**
      * 外观数列
      */
-    class Solution {
+    class Solution2 {
         public String countAndSay(int n) {
             if (n == 1)
                 return "1";
@@ -83,9 +83,77 @@ public class Day3 {
         }
     }
 
+    /**
+     * 搜索旋转排序数组
+     */
+    class Solution {
+        public int search(int[] nums, int target) {
+
+            // 找出最大值或最小值
+            int num = nums[0], begin = 0, end = nums.length-1;
+            while(begin<=end){
+                int mid = (begin+end)/2;
+                if (nums[mid] >= num) {
+                    begin = mid+1;
+                }else if(nums[mid]<num){
+                    end = mid-1;
+                }
+            }
+            int a;
+            if (target>=num){
+                a = binarySearch(nums, target, 0, end);
+            }else{
+                a = binarySearch(nums, target, end+1, nums.length-1);
+            }
+            return a;
+        }
+        public int binarySearch(int a[], int target, int begin, int end){
+            while(begin<=end){
+                int mid = (begin+end)/2;
+                if (a[mid] == target)
+                    return mid;
+                else if(a[mid]>target)
+                    end = mid-1;
+                else
+                    begin = mid+1;
+            }
+            return -1;
+        }
+    }
+    // 20210415，之前的解法
+    class Solution3 {
+        public int search(int[] nums, int target){
+            if(nums.length==0)
+                return -1;
+            if(nums.length == 1)
+                if(nums[0] == target)
+                    return 0;
+                else
+                    return -1;
+            int begin = 0,end = nums.length-1,middle = (begin+end)/2;
+            while(begin<=end){
+                if(nums[middle] == target)
+                    return middle;
+                else if(nums[begin]<=nums[middle]){
+                    if(target>=nums[begin]&&target<nums[middle]){
+                        end = middle-1;
+                    }else{
+                        begin = middle+1;
+                    }
+                }else{
+                    if(target>nums[middle]&&target<=nums[end]){
+                        begin = middle+1;
+                    }else{
+                        end = middle-1;
+                    }
+                }
+                middle = (begin+end)/2;
+            }
+            return -1;
+        }
+    }
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        int i = scanner.nextInt();
-        System.out.println(new Day3().new Solution().countAndSay(i));
+        int[] a = {3};
+        System.out.println(new Day3().new Solution().search(a, 33));
     }
 }
