@@ -1,8 +1,6 @@
 package leetcode;
 
-import com.sun.deploy.util.StringUtils;
 import org.junit.Test;
-import sun.swing.StringUIClientPropertyKey;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,39 +33,5 @@ public class Day1 {
             }
         }
 
-    }
-    class Solution1 {
-        public int divide(int dividend, int divisor) {
-            long i = 0;
-            int flag = 0;
-            long di1 = dividend;
-            long di2 = divisor;
-            if (di1<0){
-                flag +=-1;
-                di1 = -di1;
-            }else{
-                flag +=1;
-            }
-            if (di2<0){
-                flag+=-1;
-                di2 = -di2;
-            }else {
-                flag +=1;
-            }
-            while(di1>=di2){
-                i++;
-                di1 -= di2;
-            }
-            if(flag==0)
-                return (int)-i;
-            return (int)i;
-        }
-    }
-    @Test
-    public void test(){
-        int a = -2147483648;
-        int b = -1;
-        int divide = new Solution1().divide(a, b);
-        System.out.println(divide);
     }
 }
