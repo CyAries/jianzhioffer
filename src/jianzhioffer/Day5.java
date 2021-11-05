@@ -15,7 +15,7 @@ public class Day5 {
     /**
      * 二维数组中的查找
      */
-    class Solution {
+    class Solution6 {
         public boolean findNumberIn2DArray(int[][] matrix, int target) {
             if (matrix == null || matrix.length == 0 || matrix[0].length == 0) {
                 return false;
